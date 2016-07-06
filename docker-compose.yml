@@ -28,8 +28,8 @@ nginx:
     - '80:80'
   log_driver: 'fluentd'
   log_opt:
-    fluentd-address: localhost:24224
-    fluentd-tag: docker.{{.FullID}}
+    # fluentd-address: localhost:24224
+    tag: docker.{{.FullID}}
 node_app:
   build: node_app/
   links:
@@ -38,5 +38,5 @@ node_app:
     - '8080:8080'
   log_driver: 'fluentd'
   log_opt:
-    fluentd-address: localhost:24224
-    fluentd-tag: docker.{{.FullID}}
+    # fluentd-address: localhost:24224
+    tag: docker.{{.FullID}}
